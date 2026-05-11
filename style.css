@@ -1,0 +1,418 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+
+  padding:20px;
+
+  background:#ffe6ef;
+
+  /* GANTI DENGAN BACKGROUND ANDA */
+  background-image:url("depan.BG.png");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+  max-width:900px;
+  margin:auto;
+
+  background:rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:30px;
+
+  padding:20px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+h1{
+  text-align:center;
+
+  color:white;
+
+  margin-bottom:25px;
+
+  font-size:32px;
+
+  text-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+
+  margin-bottom:25px;
+}
+
+.menu button{
+  width:130px;
+  background:linear-gradient(
+    135deg,
+    #ff9ec2,
+    #ff6fa5
+  );
+
+  color:white;
+
+  border:none;
+
+  padding:14px 34px;
+
+  border-radius:18px;
+
+  font-size:16px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 6px 15px rgba(255,111,165,0.4);
+
+  transition:0.25s;
+}
+
+.menu button:hover{
+  transform:translateY(-3px) scale(1.03);
+
+  box-shadow:0 10px 20px rgba(255,111,165,0.5);
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+  background:rgba(255,255,255,0.92);
+
+  border-radius:30px;
+
+  padding:50px 20px;
+
+  text-align:center;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+  animation:fadeIn 0.3s ease;
+
+  margin-bottom:50px;
+
+  width:100%;
+
+  min-height:400px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+
+/* =========================
+   FLASHCARD
+========================= */
+
+.kotoba{
+  font-size:80px;
+
+  color:#000000;
+
+  margin-bottom:25px;
+
+  font-weight:bold;
+}
+
+ruby rt{
+  font-size:28px;
+  color:#4d4d4d;
+  margin-bottom: 5px;
+}
+
+.arti{
+  display:none;
+
+  font-size:38px;
+
+  color:#555;
+
+  margin-top:10px;
+
+  min-height:80px;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.flash-buttons{
+  margin-top:50px;
+  
+  display:flex;
+  justify-content:center;
+  gap:15px;
+
+  flex-wrap:wrap;
+}
+
+.flash-buttons button{
+  background:linear-gradient(
+    135deg,
+    #ffb3cc,
+    #ff7aa8
+  );
+
+  border:none;
+
+  padding:14px 22px;
+
+  color:white;
+
+  border-radius:18px;
+
+  font-size:16px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.2s;
+
+  box-shadow:0 5px 15px rgba(255,122,168,0.3);
+}
+#flashBtn{
+  width:200px;
+
+  margin:0 auto;
+
+  background:linear-gradient(
+    135deg,
+    #ffb3cc,
+    #ff7aa8
+  );
+
+  border:none;
+
+  padding:14px 22px;
+
+  color:white;
+
+  border-radius:18px;
+
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.2s;
+
+  box-shadow:0 5px 15px rgba(255,122,168,0.3);
+}
+
+#flashBtn:hover{
+  transform:translateY(-2px);
+}
+
+.flash-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+
+/* =========================
+   INFO LATIHAN
+========================= */
+
+.info{
+  margin-bottom:20px;
+
+  font-size:18px;
+
+  color:#666;
+}
+
+
+/* =========================
+   SOAL
+========================= */
+
+.question{
+  font-size:58px;
+
+  color:#000000;
+
+  margin-bottom:25px;
+
+  font-weight:bold;
+}
+
+
+/* =========================
+   PILIHAN
+========================= */
+
+.option{
+  width:80%;
+
+  margin:8px 0;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:#d4d4d4;
+
+  font-size:25px;
+
+  cursor:pointer;
+
+  transition:0.2s;
+
+  color:#000000;
+
+  font-weight:500;
+}
+
+.option:hover{
+  transform:scale(1.02);
+
+  background:#ffd0df;
+}
+
+.correct{
+  background:#6fdc92 !important;
+  color:white;
+}
+
+.wrong{
+  background:#ff6b6b !important;
+  color:white;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#resultBox h2{
+  color:#ff4f87;
+
+  margin-bottom:20px;
+
+  font-size:32px;
+}
+
+#resultBox p{
+  margin:12px 0;
+
+  font-size:22px;
+
+  color:#555;
+}
+
+#resultBox button{
+  margin-top:25px;
+
+  background:linear-gradient(
+    135deg,
+    #ff9ec2,
+    #ff6fa5
+  );
+
+  border:none;
+
+  color:white;
+
+  padding:14px 24px;
+
+  border-radius:18px;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  box-shadow:0 5px 15px rgba(255,111,165,0.4);
+}
+
+
+/* =========================
+   UTIL
+========================= */
+
+.hidden{
+  display:none;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media(max-width:600px){
+
+  h1{
+    font-size:24px;
+  }
+
+  .kotoba{
+    font-size:42px;
+  }
+
+  .question{
+    font-size:28px;
+  }
+
+  .arti{
+    font-size:22px;
+  }
+
+  .option{
+    font-size:16px;
+    padding:15px;
+  }
+
+}

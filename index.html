@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Belajar Kotoba SSW</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Belajar Kotoba SSW Pengolahan Makanan</h1>
+
+    <div class="menu">
+      <button onclick="showHafalan()">HAFALAN</button>
+      <button onclick="startLatihan()">LATIHAN</button>
+      <button onclick="acakData()">ACAK</button>
+    </div>
+
+    <!-- HAFALAN -->
+    <div id="hafalanBox" class="card">
+
+      <div class="kotoba" id="kotobaText"></div>
+
+      <div class="arti" id="artiText"></div>
+
+      <button id="flashBtn" onclick="flashAction()">
+       Lihat Arti
+</button>
+
+    </div>
+
+    <!-- LATIHAN -->
+    <div id="latihanBox" class="card hidden">
+
+      <div class="info">
+        <b>Sesi:</b> <span id="sessionText">1</span>/5
+        |
+        <b>Soal:</b> <span id="questionNumber">1</span>/20
+      </div>
+
+      <div class="question" id="questionText"></div>
+
+      <div id="optionsBox"></div>
+
+    </div>
+
+    <!-- HASIL -->
+    <div id="resultBox" class="card hidden">
+
+      <h2>Hasil Sesi</h2>
+
+      <p>Nilai: <span id="nilaiText"></span></p>
+      <p>Benar: <span id="benarText"></span></p>
+      <p>Salah: <span id="salahText"></span></p>
+
+      <button onclick="nextSession()">Lanjut</button>
+
+    </div>
+
+  </div>
+
+  <script src="web.js"></script>
+
+</body>
+</html>
