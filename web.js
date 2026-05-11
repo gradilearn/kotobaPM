@@ -16,536 +16,71 @@ CONTOH:
 ===================================
 */
 
-let kotobaData = [
-
-  {
-  t: "<ruby>食品衛生<rt>しょくひんえいせい</rt></ruby>",
-  i: "Kebersihan Makanan"
-},
-
-{
-  t: "<ruby>労働安全<rt>ろうどうあんぜん</rt></ruby>",
-  i: "Keselamatan Kerja"
-},
-
-{
-  t: "<ruby>安全保護具<rt>あんぜんほごぐ</rt></ruby>",
-  i: "Peralatan Perlindungan Keselamatan"
-},
-
-{
-  t: "<ruby>着用<rt>ちゃくよう</rt></ruby>",
-  i: "Memakai"
-},
-
-{
-  t: "<ruby>健康<rt>けんこう</rt></ruby>",
-  i: "Kesehatan"
-},
-
-{
-  t: "<ruby>清潔<rt>せいけつ</rt></ruby>",
-  i: "Kebersihan"
-},
-
-{
-  t: "<ruby>設備<rt>せつび</rt></ruby>",
-  i: "Fasilitas"
-},
-
-{
-  t: "<ruby>保管<rt>ほかん</rt></ruby>",
-  i: "Penyimpanan"
-},
-
-{
-  t: "<ruby>重要<rt>じゅうよう</rt></ruby>",
-  i: "Penting"
-},
-
-{
-  t: "<ruby>労働災害<rt>ろうどうさいがい</rt></ruby>",
-  i: "Kecelakaan Industri"
-},
-
-{
-  t: "<ruby>転倒<rt>てんとう</rt></ruby>",
-  i: "Jatuh"
-},
-
-{
-  t: "<ruby>はさまれ<rt>はさまれ</rt></ruby>",
-  i: "Terjepit"
-},
-
-{
-  t: "<ruby>巻き込まれ<rt>まきこまれ</rt></ruby>",
-  i: "Terlilit/Terjepit"
-},
-
-{
-  t: "<ruby>切れる<rt>きれる</rt></ruby>",
-  i: "Terpotong"
-},
-
-{
-  t: "<ruby>包丁<rt>ほうちょう</rt></ruby>",
-  i: "Pisau"
-},
-
-{
-  t: "<ruby>階段<rt>かいだん</rt></ruby>",
-  i: "Tangga"
-},
-
-{
-  t: "<ruby>滑る<rt>すべる</rt></ruby>",
-  i: "Licin"
-},
-
-{
-  t: "<ruby>熱中症<rt>ねっちゅうしょう</rt></ruby>",
-  i: "Heatstroke"
-},
-
-{
-  t: "<ruby>湿度<rt>しつど</rt></ruby>",
-  i: "Kelembaban"
-},
-
-{
-  t: "<ruby>水分<rt>すいぶん</rt></ruby>",
-  i: "Cairan"
-},
-
-{
-  t: "<ruby>塩分<rt>えんぶん</rt></ruby>",
-  i: "Garam"
-},
-
-{
-  t: "<ruby>感染症<rt>かんせんしょう</rt></ruby>",
-  i: "Infeksi"
-},
-
-{
-  t: "<ruby>長袖<rt>ながそで</rt></ruby>",
-  i: "Lengan Panjang"
-},
-
-{
-  t: "<ruby>薬品<rt>やくひん</rt></ruby>",
-  i: "Bahan Kimia"
-},
-
-{
-  t: "<ruby>高圧洗浄<rt>こうあつせんじょう</rt></ruby>",
-  i: "Pencucian Tekanan Tinggi"
-},
-
-{
-  t: "<ruby>騒音<rt>そうおん</rt></ruby>",
-  i: "Kebisingan"
-},
-
-{
-  t: "<ruby>耐熱<rt>たいねつ</rt></ruby>",
-  i: "Tahan Panas"
-},
-
-{
-  t: "<ruby>耐油<rt>たいゆ</rt></ruby>",
-  i: "Tahan Minyak"
-},
-
-{
-  t: "<ruby>作業手順<rt>さぎょうてじゅん</rt></ruby>",
-  i: "Prosedur Kerja"
-},
-
-{
-  t: "<ruby>通路<rt>つうろ</rt></ruby>",
-  i: "Lorong"
-},
-
-{
-  t: "<ruby>指差呼称<rt>しさしこしょう</rt></ruby>",
-  i: "Menunjuk dan Menyebut"
-},
-
-{
-  t: "<ruby>標識<rt>ひょうしき</rt></ruby>",
-  i: "Tanda"
-},
-
-{
-  t: "<ruby>器具<rt>きぐ</rt></ruby>",
-  i: "Peralatan"
-},
-
-{
-  t: "<ruby>始業前点検<rt>しぎょうまえてんけん</rt></ruby>",
-  i: "Pemeriksaan Sebelum Kerja"
-},
-
-{
-  t: "<ruby>異常<rt>いじょう</rt></ruby>",
-  i: "Kelainan"
-},
-
-{
-  t: "<ruby>部品<rt>ぶひん</rt></ruby>",
-  i: "Komponen"
-},
-
-{
-  t: "<ruby>動作<rt>どうさ</rt></ruby>",
-  i: "Gerakan"
-},
-
-{
-  t: "<ruby>正常<rt>せいじょう</rt></ruby>",
-  i: "Normal"
-},
-
-{
-  t: "<ruby>停止<rt>ていし</rt></ruby>",
-  i: "Berhenti"
-},
-
-{
-  t: "<ruby>回転<rt>かいてん</rt></ruby>",
-  i: "Berputar"
-},
-
-{
-  t: "<ruby>安全装置<rt>あんぜんそうち</rt></ruby>",
-  i: "Perangkat Keselamatan"
-},
-
-{
-  t: "<ruby>電源<rt>でんげん</rt></ruby>",
-  i: "Sumber Listrik"
-},
-
-{
-  t: "<ruby>メンテナンス<rt>メンテナンス</rt></ruby>",
-  i: "Pemeliharaan"
-},
-
-{
-  t: "<ruby>洗剤<rt>せんざい</rt></ruby>",
-  i: "Deterjen"
-},
-
-{
-  t: "<ruby>塩素系<rt>えんそけい</rt></ruby>",
-  i: "Berbasis Klorin"
-},
-
-{
-  t: "<ruby>酸性洗剤<rt>さんせいせんざい</rt></ruby>",
-  i: "Deterjen Asam"
-},
-
-{
-  t: "<ruby>混ぜる<rt>まぜる</rt></ruby>",
-  i: "Mencampur"
-},
-
-{
-  t: "<ruby>有毒<rt>ゆうどく</rt></ruby>",
-  i: "Beracun"
-},
-
-{
-  t: "<ruby>緊急<rt>きんきゅう</rt></ruby>",
-  i: "Darurat"
-},
-
-{
-  t: "<ruby>火災<rt>かさい</rt></ruby>",
-  i: "Kebakaran"
-},
-
-{
-  t: "<ruby>避難訓練<rt>ひなんくんれん</rt></ruby>",
-  i: "Latihan Evakuasi"
-},
-
-{
-  t: "<ruby>感電する<rt>かんでんする</rt></ruby>",
-  i: "Tersengat Listrik"
-},
-
-{
-  t: "<ruby>爆発<rt>ばくはつ</rt></ruby>",
-  i: "Ledakan"
-},
-
-{
-  t: "<ruby>漏れる<rt>もれる</rt></ruby>",
-  i: "Bocor"
-},
-
-{
-  t: "<ruby>ガスコンロ<rt>ガスコンロ</rt></ruby>",
-  i: "Kompor Gas"
-},
-
-{
-  t: "<ruby>除去<rt>じょきょ</rt></ruby>",
-  i: "Menghilangkan"
-},
-
-{
-  t: "<ruby>対策<rt>たいさく</rt></ruby>",
-  i: "Penanggulangan"
-},
-
-{
-  t: "<ruby>棚<rt>たな</rt></ruby>",
-  i: "Rak"
-},
-
-{
-  t: "<ruby>鉄板<rt>てっぱん</rt></ruby>",
-  i: "Plat Besi"
-},
-
-{
-  t: "<ruby>作業台<rt>さぎょうだい</rt></ruby>",
-  i: "Meja Kerja"
-},
-
-{
-  t: "<ruby>鍋<rt>なべ</rt></ruby>",
-  i: "Panci"
-},
-
-{
-  t: "<ruby>計量<rt>けいりょう</rt></ruby>",
-  i: "Penimbangan"
-},
-
-{
-  t: "<ruby>汗<rt>あせ</rt></ruby>",
-  i: "Keringat"
-},
-
-{
-  t: "<ruby>診断<rt>しんだん</rt></ruby>",
-  i: "Diagnosis"
-},
-
-{
-  t: "<ruby>立入禁止<rt>たちいりきんし</rt></ruby>",
-  i: "Dilarang Masuk"
-},
-
-{
-  t: "<ruby>点検中<rt>てんけんちゅう</rt></ruby>",
-  i: "Sedang Diperiksa"
-},
-
-{
-  t: "<ruby>感電注意<rt>かんでんちゅうい</rt></ruby>",
-  i: "Awas Sengatan Listrik"
-},
-
-{
-  t: "<ruby>高温注意<rt>こうおんちゅうい</rt></ruby>",
-  i: "Awas Suhu Tinggi"
-},
-
-{
-  t: "<ruby>整理<rt>せいり</rt></ruby>",
-  i: "Ringkas"
-},
-
-{
-  t: "<ruby>整頓<rt>せいとん</rt></ruby>",
-  i: "Rapi"
-},
-
-{
-  t: "<ruby>清掃<rt>せいそう</rt></ruby>",
-  i: "Pembersihan"
-},
-
-{
-  t: "<ruby>衛生管理<rt>えいせいかんり</rt></ruby>",
-  i: "Manajemen Kebersihan"
-},
-
-{
-  t: "<ruby>交差汚染<rt>こうさおせん</rt></ruby>",
-  i: "Kontaminasi Silang"
-},
-
-{
-  t: "<ruby>ゾーニング<rt>ゾーニング</rt></ruby>",
-  i: "Zonasi"
-},
-
-{
-  t: "<ruby>消毒<rt>しょうどく</rt></ruby>",
-  i: "Disinfeksi"
-},
-
-{
-  t: "<ruby>殺菌<rt>さっきん</rt></ruby>",
-  i: "Sterilisasi"
-},
-
-{
-  t: "<ruby>食品衛生法<rt>しょくひんえいせいほう</rt></ruby>",
-  i: "UU Kebersihan Makanan"
-},
-
-{
-  t: "<ruby>危険予知活動<rt>きけんよちかつどう</rt></ruby>",
-  i: "Aktivitas Prediksi Bahaya"
-},
-
-{
-  t: "<ruby>報告<rt>ほうこく</rt></ruby>",
-  i: "Laporan"
-},
-
-{
-  t: "<ruby>連絡<rt>れんらく</rt></ruby>",
-  i: "Kontak"
-},
-
-{
-  t: "<ruby>相談<rt>そうだん</rt></ruby>",
-  i: "Konsultasi"
-},
-
-{
-  t: "<ruby>品質<rt>ひんしつ</rt></ruby>",
-  i: "Kualitas"
-},
-
-{
-  t: "<ruby>温度管理<rt>おんどかんり</rt></ruby>",
-  i: "Kontrol Suhu"
-},
-
-{
-  t: "<ruby>異物混入<rt>いぶつこんにゅう</rt></ruby>",
-  i: "Kontaminasi Benda Asing"
-},
-
-{
-  t: "<ruby>金属探知機<rt>きんぞくたんちき</rt></ruby>",
-  i: "Detektor Logam"
-},
-
-{
-  t: "<ruby>食品添加物<rt>しょくひんてんかぶつ</rt></ruby>",
-  i: "Bahan Tambahan Makanan"
-},
-
-{
-  t: "<ruby>食中毒<rt>しょくちゅうどく</rt></ruby>",
-  i: "Keracunan Makanan"
-},
-
-{
-  t: "<ruby>ノロウイルス<rt>ノロウイルス</rt></ruby>",
-  i: "Norovirus"
-},
-
-{
-  t: "<ruby>加熱<rt>かねつ</rt></ruby>",
-  i: "Pemanasan"
-},
-
-{
-  t: "<ruby>冷却<rt>れいきゃく</rt></ruby>",
-  i: "Pendinginan"
-},
-
-{
-  t: "<ruby>腐敗<rt>ふはい</rt></ruby>",
-  i: "Pembusukan"
-},
-
-{
-  t: "<ruby>洗浄<rt>せんじょう</rt></ruby>",
-  i: "Pencucian"
-},
-
-{
-  t: "<ruby>衛生着<rt>えいせいちょう</rt></ruby>",
-  i: "Pakaian Higienis"
-},
-
-{
-  t: "<ruby>マスク<rt>マスク</rt></ruby>",
-  i: "Masker"
-},
-
-{
-  t: "<ruby>帽子<rt>ぼうし</rt></ruby>",
-  i: "Topi"
-},
-
-{
-  t: "<ruby>手袋<rt>てぶくろ</rt></ruby>",
-  i: "Sarung Tangan"
-},
-
-{
-  t: "<ruby>ヘアネット<rt>ヘアネット</rt></ruby>",
-  i: "Hairnet"
-},
-
-{
-  t: "<ruby>持ち込み禁止<rt>もちこみきんし</rt></ruby>",
-  i: "Dilarang Membawa Masuk"
-},
-
-{
-  t: "<ruby>品質管理<rt>ひんしつかんり</rt></ruby>",
-  i: "Manajemen Kualitas"
-},
-
-{
-  t: "<ruby>検査<rt>けんさ</rt></ruby>",
-  i: "Pemeriksaan"
-},
-
-{
-  t: "<ruby>不適合品<rt>ふてきごうひん</rt></ruby>",
-  i: "Produk Tidak Sesuai"
-},
-
-{
-  t: "<ruby>記録<rt>きろく</rt></ruby>",
-  i: "Catatan"
-},
-
-{
-  t: "<ruby>改善<rt>かいぜん</rt></ruby>",
-  i: "Perbaikan"
-},
-
-{
-  t: "<ruby>確認<rt>かくにん</rt></ruby>",
-  i: "Konfirmasi"
-},
-
-{
-  t: "<ruby>HACCP<rt>ハサップ</rt></ruby>",
-  i: "HACCP"
-}
-
+const kotobaData = [
+  // BAB 1: MANAJEMEN KEBERSIHAN (食品衛生管理)
+  { t: "<ruby>食品衛生<rt>しょくひんえいせい</rt></ruby>", i: "Kebersihan Makanan", d: "Menjamin keamanan makanan agar tidak menyebabkan gangguan kesehatan pada konsumen." },
+  { t: "<ruby>衛生管理<rt>えいせいかんり</rt></ruby>", i: "Manajemen Kebersihan", d: "Upaya terencana untuk mencegah kontaminasi biologi, kimia, dan fisik pada produk." },
+  { t: "<ruby>一般衛生管理<rt>いっぱんえいせいかんり</rt></ruby>", i: "Manajemen Kebersihan Umum", d: "Langkah dasar (Prasyarat) sebelum HACCP, mencakup kebersihan fasilitas dan pekerja." },
+  { t: "<ruby>交差汚染<rt>こうさおせん</rt></ruby>", i: "Kontaminasi Silang", d: "Bakteri berpindah dari bahan mentah ke produk jadi melalui alat, tangan, atau area kerja." },
+  { t: "<ruby>異物混入<rt>いぶつこんにゅう</rt></ruby>", i: "Kontaminasi Benda Asing", d: "Masuknya benda berbahaya seperti logam, plastik, rambut, atau serangga ke dalam produk." },
+  { t: "<ruby>異物<rt>いぶつ</rt></ruby>", i: "Benda Asing", d: "Benda yang tidak seharusnya ada di makanan (logam, kaca, serangga, rambut, dll)." },
+  { t: "<ruby>金属探知機<rt>きんぞくたんちき</rt></ruby>", i: "Detektor Logam", d: "Mesin untuk mendeteksi adanya kontaminasi logam pada produk akhir." },
+  { t: "<ruby>X線探知機<rt>エックスせんたんちき</rt></ruby>", i: "Detektor Sinar-X", d: "Mesin untuk mendeteksi benda asing non-logam seperti tulang, plastik, atau batu." },
+  { t: "<ruby>消毒<rt>しょうどく</rt></ruby>", i: "Disinfeksi", d: "Proses membunuh atau mengurangi jumlah mikroorganisme hingga tingkat aman." },
+  { t: "<ruby>殺菌<rt>さっきん</rt></ruby>", i: "Sterilisasi", d: "Proses mematikan semua mikroorganisme termasuk bakteri dan spora." },
+  { t: "<ruby>洗浄<rt>せんじょう</rt></ruby>", i: "Pencucian", d: "Menghilangkan kotoran yang terlihat dengan air dan deterjen." },
+  
+  // 5S - DASAR KERJA
+  { t: "<ruby>整理<rt>せいり</rt></ruby>", i: "Ringkas (Seiri)", d: "Memilah dan membuang barang yang tidak diperlukan di tempat kerja." },
+  { t: "<ruby>整頓<rt>せいとん</rt></ruby>", i: "Rapi (Seiton)", d: "Menentukan tempat dan jumlah barang agar mudah diambil saat diperlukan." },
+  { t: "<ruby>清掃<rt>せいそう</rt></ruby>", i: "Resik (Seiso)", d: "Membersihkan tempat kerja dan mesin agar selalu dalam kondisi baik." },
+  { t: "<ruby>清潔<rt>せいけつ</rt></ruby>", i: "Rawat (Seiketsu)", d: "Menjaga kondisi 3S (Seiri, Seiton, Seiso) tetap konsisten dan higienis." },
+  { t: "<ruby>しつけ<rt>しつけ</rt></ruby>", i: "Disiplin (Shitsuke)", d: "Membiasakan diri mematuhi aturan dan standar operasional yang berlaku." },
+
+  // ZONASI & AREA
+  { t: "<ruby>ゾーニング<rt>ゾーニング</rt></ruby>", i: "Zonasi", d: "Pemisahan area kerja (Area Bersih vs Area Kotor) untuk mencegah kontaminasi." },
+  { t: "<ruby>清潔作業区域<rt>せいけつさぎょうくいき</rt></ruby>", i: "Area Kerja Bersih", d: "Area proses akhir (pemasakan/pengemasan) yang harus dijaga sangat steril." },
+  { t: "<ruby>準清潔作業区域<rt>じゅんせいけつさぎょうくいき</rt></ruby>", i: "Area Kerja Semi Bersih", d: "Area antara, seperti tempat persiapan bahan atau pencucian awal." },
+  { t: "<ruby>汚染作業区域<rt>おせんさぎょうくいき</rt></ruby>", i: "Area Kerja Terkontaminasi", d: "Area penerimaan bahan baku mentah atau pencucian alat kotor." },
+  { t: "<ruby>作業エリア<rt>さぎょうエリア</rt></ruby>", i: "Area Kerja", d: "Tempat berlangsungnya proses pengolahan makanan." },
+  
+  // HACCP & KUALITAS
+  { t: "<ruby>HACCP<rt>ハサップ</rt></ruby>", i: "HACCP", d: "Sistem manajemen keamanan pangan dengan mengendalikan Titik Kendali Kritis (CCP)." },
+  { t: "<ruby>品質管理<rt>ひんしつかんり</rt></ruby>", i: "Manajemen Kualitas", d: "Menjaga agar produk sesuai standar rasa, tekstur, dan keamanan." },
+  { t: "<ruby>温度管理<rt>おんどかんり</rt></ruby>", i: "Kontrol Suhu", d: "Sangat penting untuk mencegah pertumbuhan bakteri (Zona Bahaya: 10°C - 60°C)." },
+  { t: "<ruby>湿度管理<rt>しつどかんり</rt></ruby>", i: "Kontrol Kelembaban", d: "Mengatur kadar air di udara untuk mencegah pertumbuhan jamur." },
+  { t: "<ruby>不適合品<rt>ふてきごうひん</rt></ruby>", i: "Produk Tidak Sesuai", d: "Produk yang gagal memenuhi standar keamanan atau kualitas (NG)." },
+  { t: "<ruby>回収<rt>かいしゅう</rt></ruby>", i: "Penarikan Produk", d: "Tindakan mengambil kembali produk yang sudah beredar karena ditemukan bahaya." },
+  { t: "<ruby>記録<rt>きろく</rt></ruby>", i: "Catatan", d: "Bukti tertulis pelaksanaan kontrol suhu, kebersihan, dan proses produksi." },
+
+  // KERACUNAN MAKANAN (食中毒)
+  { t: "<ruby>食中毒<rt>しょくちゅうどく</rt></ruby>", i: "Keracunan Makanan", d: "Penyakit akibat mengonsumsi makanan yang mengandung bakteri, virus, atau racun." },
+  { t: "<ruby>ノロウイルス<rt>ノロウイルス</rt></ruby>", i: "Norovirus", d: "Penyebab utama keracunan di musim dingin. Sangat menular melalui tangan/tiram mentah." },
+  { t: "<ruby>サルモネラ菌<rt>サルモネラきん</rt></ruby>", i: "Bakteri Salmonella", d: "Sering ditemukan pada telur dan ayam mentah. Menyebabkan demam dan diare." },
+  { t: "<ruby>カンピロバクター<rt>カンピロバクター</rt></ruby>", i: "Campylobacter", d: "Bakteri pada daging ayam mentah. Mati jika dipanaskan dengan benar." },
+  { t: "<ruby>黄色ブドウ球菌<rt>おうしょくブドウきゅうきん</rt></ruby>", i: "Staphylococcus Aureus", d: "Bakteri dari luka tangan manusia. Menghasilkan racun yang tahan panas." },
+  { t: "<ruby>アニサキス<rt>アニサキス</rt></ruby>", i: "Anisakis", d: "Parasit pada ikan mentah. Dapat dibunuh dengan pembekuan atau pemanasan." },
+
+  // TANGGAL & LABEL
+  { t: "<ruby>消費期限<rt>しょうひきげん</rt></ruby>", i: "Batas Konsumsi", d: "Batas waktu 'keamanan' (untuk makanan cepat basi seperti bento/daging)." },
+  { t: "<ruby>賞味期限<rt>しょうみきげん</rt></ruby>", i: "Batas Kualitas Terbaik", d: "Batas waktu 'rasa terbaik' (untuk makanan tahan lama seperti mie instan/kaleng)." },
+  { t: "<ruby>アレルギー表示<rt>アレルギーひょうじ</rt></ruby>", i: "Label Alergi", d: "Informasi bahan pemicu alergi (Telur, Susu, Gandum, Udang, Kepiting, dll)." },
+
+  // KESELAMATAN KERJA (労働安全)
+  { t: "<ruby>労働安全<rt>ろうどうあんぜん</rt></ruby>", i: "Keselamatan Kerja", d: "Mencegah kecelakaan kerja demi melindungi keselamatan pekerja." },
+  { t: "<ruby>労働災害<rt>ろうどうさいがい</rt></ruby>", i: "Kecelakaan Kerja", d: "Cedera atau penyakit yang terjadi akibat aktivitas pekerjaan di pabrik." },
+  { t: "<ruby>指差呼称<rt>しさしこしょう</rt></ruby>", i: "Menunjuk dan Menyebut", d: "Metode menunjuk objek dan meneriakkan kondisinya untuk memastikan keamanan." },
+  { t: "<ruby>ヒヤリ・ハット<rt>ヒヤリ・ハット</rt></ruby>", i: "Hiyari Hatto", d: "Insiden hampir celaka. Harus dilaporkan agar tidak menjadi kecelakaan serius." },
+  { t: "<ruby>熱中症<rt>ねっちゅうしょう</rt></ruby>", i: "Heatstroke", d: "Gangguan kesehatan akibat suhu panas. Harus diatasi dengan air, garam, dan istirahat." },
+  { t: "<ruby>危険予知活動<rt>きけんよちかつどう</rt></ruby>", i: "Aktivitas Prediksi Bahaya (KYT)", d: "Diskusi sebelum kerja untuk memprediksi potensi bahaya di area kerja." },
+  { t: "<ruby>安全保護具<rt>あんぜんほごぐ</rt></ruby>", i: "Alat Pelindung Diri (APD)", d: "Perlengkapan seperti helm, sepatu safety, dan sarung tangan pelindung." },
+  
+  // ATURAN & KERJA
+  { t: "<ruby>就業規則<rt>しゅうぎょうきそく</rt></ruby>", i: "Peraturan Kerja", d: "Aturan internal perusahaan yang harus ditaati oleh semua karyawan." },
+  { t: "<ruby>雇用契約書<rt>こようけいやくしょ</rt></ruby>", i: "Kontrak Kerja", d: "Dokumen kesepakatan tertulis mengenai gaji, jam kerja, dan jenis pekerjaan." },
+  { t: "<ruby>特定技能制度<rt>とくていぎのうせいど</rt></ruby>", i: "Sistem Tokutei Ginou", d: "Sistem visa keterampilan khusus untuk pekerja asing di bidang industri tertentu." },
+  { t: "<ruby>報告・連絡・相談<rt>ほう・れん・そう</rt></ruby>", i: "Hou-Ren-Sou", d: "Budaya kerja Jepang: Melapor, Menghubungi, dan Berkonsultasi." }
 ];
-
-
 // ====================
 // HAFALAN
 // ====================
@@ -554,6 +89,9 @@ let flashIndex = 0;
 
 const kotobaText = document.getElementById("kotobaText");
 const artiText = document.getElementById("artiText");
+const penjelasanText = document.getElementById("penjelasanText");
+let isFlipped = false;
+
 
 function showFlashcard(){
 
@@ -561,12 +99,37 @@ function showFlashcard(){
 
   artiText.innerHTML = kotobaData[flashIndex].i;
 
+  penjelasanText.innerHTML = kotobaData[flashIndex].d || "";
+
+  // sembunyikan dulu
   artiText.style.display = "none";
+  penjelasanText.style.display = "none";
+
+  document.getElementById("flashBtn").innerText = "Lihat Arti";
 }
 
 function showArti(){
 
   artiText.style.display = "block";
+
+  penjelasanText.style.display = "block";
+
+  document.getElementById("flashBtn").innerText = "Next";
+}
+
+function flashAction(){
+
+  // kalau masih sembunyi → tampilkan semua (arti + penjelasan)
+  if(artiText.style.display === "none"){
+
+    showArti();
+  }
+
+  // kalau sudah tampil → next kartu
+  else{
+
+    nextFlashcard();
+  }
 }
 
 function nextFlashcard(){
@@ -610,14 +173,7 @@ function acakData(){
 
   flashIndex = 0;
 
-  // reset status arti
-  artiMuncul = false;
-
-  // reset tulisan tombol
-  document.getElementById("flashBtn").innerText =
-    "Lihat Arti";
-
-  tampilkanFlashcard();
+  showFlashcard();
 
   alert("Data berhasil diacak!");
 }
@@ -626,57 +182,6 @@ function acakData(){
 // ====================
 // LATIHAN
 // ====================
-
-let index = 0;
-let artiMuncul = false;
-function tampilkanFlashcard() {
-
-  document.getElementById("kotobaText").innerHTML =
-    kotobaData[index].t;
-
-  document.getElementById("artiText").innerHTML =
-    kotobaData[index].i;
-
-  document.getElementById("artiText").style.display =
-    "none";
-}
-
-function flashAction() {
-
-  // tampilkan arti
-  if (artiMuncul === false) {
-
-    document.getElementById("artiText").style.display =
-      "block";
-
-    document.getElementById("flashBtn").innerText =
-      "Selanjutnya";
-
-    artiMuncul = true;
-
-  }
-
-  // pindah ke kartu berikutnya
-  else {
-
-    index++;
-
-    // kembali ke awal
-    if (index >= kotobaData.length) {
-      index = 0;
-    }
-
-    // tampilkan kartu baru
-    showFlashcard();
-    tampilkanFlashcard();
-
-    // reset tombol
-    document.getElementById("flashBtn").innerText =
-      "Lihat Arti";
-
-    artiMuncul = false;
-  }
-}
 
 let latihanData = [];
 
