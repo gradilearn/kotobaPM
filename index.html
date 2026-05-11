@@ -19,6 +19,7 @@
       <button onclick="showHafalan()">HAFALAN</button>
       <button onclick="startLatihan()">LATIHAN</button>
       <button onclick="acakData()">ACAK</button>
+      <button onclick="showKotobaList()">LIST</button>
     </div>
 
     <!-- HAFALAN -->
@@ -48,7 +49,15 @@
       <div id="optionsBox"></div>
 
     </div>
-
+    
+    <div id="kotobaListBox" class="hidden">
+      <div class="search-box" style="margin-bottom: 20px;">
+    <input type="text" id="searchInput" placeholder="Cari kata atau arti..." onkeyup="filterKotoba()" 
+           style="width: 100%; padding: 12px; border-radius: 15px; border: none;">
+  </div>
+  <div id="listContainer" style="max-height: 500px; overflow-y: auto; display: grid; gap: 10px;">
+    </div>
+ 
     <!-- HASIL -->
     <div id="resultBox" class="card hidden">
 
