@@ -528,3 +528,58 @@ function nextSession(){
 // ====================
 
 showFlashcard();
+
+function showKotobaList() {
+    // Sembunyikan semua kotak lain
+    document.getElementById('hafalanBox').classList.add('hidden');
+    document.getElementById('latihanBox').classList.add('hidden');
+    document.getElementById('resultBox').classList.add('hidden');
+    
+    // Tampilkan kotak list
+    const listBox = document.getElementById('kotobaListBox');
+    listBox.classList.remove('hidden');
+
+    const container = document.getElementById('listContainer');
+    container.innerHTML = ""; // Kosongkan container sebelum diisi ulang
+
+    // Render data dari variabel kotobaData (Pastikan nama variabel Anda benar)
+    kotobaData.forEach((data) => {
+        const item = document.createElement('div');
+        item.className = 'kotoba-item';
+        item.innerHTML = `
+            <ruby>${data.t}</ruby>
+            <div class="item-arti">${data.i}</div>
+            <div class="item-desc">${data.d}</div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function filterKotoba() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let items = document.getElementsByClassName('kotoba-item');
+    
+    for (let i = 0; i < items.length; i++) {
+        // Mencari kata berdasarkan Kanji, Arti, atau Penjelasan
+        if (items[i].innerText.toLowerCase().includes(input)) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+
+function backToMenu() {
+    // Sembunyikan list dan kembali ke hafalan
+    document.getElementById('kotobaListBox').classList.add('hidden');
+    document.getElementById('hafalanBox').classList.remove('hidden');
+}
+
+// Tambahan: Pastikan saat klik menu HAFALAN atau LATIHAN, list ditutup
+function showHafalan() {
+    document.getElementById('kotobaListBox').classList.add('hidden');
+    document.getElementById('hafalanBox').classList.remove('hidden');
+    document.getElementById('latihanBox').classList.add('hidden');
+    document.getElementById('resultBox').classList.add('hidden');
+    // ... sisa kode fungsi hafalan Anda ...
+}
