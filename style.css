@@ -1,393 +1,79 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-  min-height:100vh;
-  padding:20px;
-  background:#ffe6ef;
-  background-image:url("depan.BG.png");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-}
+  <title>Belajar Kotoba SSW</title>
 
-/* =========================
-   CONTAINER
-========================= */
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.container{
-  max-width:900px;
-  margin:auto;
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(10px);
-  border-radius:30px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
+<body>
 
-/* =========================
-   JUDUL
-========================= */
+  <div class="container">
 
-h1{
-  text-align:center;
-  color:white;
-  margin-bottom:25px;
-  font-size:32px;
-  text-shadow:0 3px 10px rgba(0,0,0,0.2);
-}
+    <h1>Belajar Kotoba SSW Pengolahan Makanan</h1>
 
-/* =========================
-   MENU
-========================= */
+    <div class="menu">
+      <button onclick="showHafalan()">HAFALAN</button>
+      <button onclick="startLatihan()">LATIHAN</button>
+      <button onclick="acakData()">ACAK</button>
+      <button onclick="showKotobaList()">LIST</button>
+    </div>
 
-.menu{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:25px;
-}
+    <!-- HAFALAN -->
+    <div id="hafalanBox" class="card">
 
-.menu button{
-  width:130px;
-  background:linear-gradient(135deg,#ff9ec2,#ff6fa5);
-  color:white;
-  border:none;
-  padding:14px 34px;
-  border-radius:18px;
-  font-size:16px;
-  font-weight:bold;
-  text-align: center;
-  cursor:pointer;
-  box-shadow:0 6px 15px rgba(255,111,165,0.4);
-  transition:0.25s;
-}
+      <div class="kotoba" id="kotobaText"></div>
 
-.menu button:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 10px 20px rgba(255,111,165,0.5);
-}
+      <div class="arti" id="artiText"></div>
+<div class="penjelasan" id="penjelasanText"></div>
+      <button id="flashBtn" onclick="flashAction()">
+       Lihat Arti
+</button>
 
-/* =========================
-   CARD (ANTI SHIFT)
-========================= */
+    </div>
 
-.card{
-  background:rgba(255,255,255,0.92);
-  border-radius:30px;
-  padding:20px 20px;
-  text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  animation:fadeIn 0.3s ease;
+    <!-- LATIHAN -->
+    <div id="latihanBox" class="card hidden">
 
-  margin-bottom:40px;
+      <div class="info">
+        <b>Sesi:</b> <span id="sessionText">1</span>/5
+        |
+        <b>Soal:</b> <span id="questionNumber">1</span>/20
+      </div>
 
-  width:100%;
-  height:420px;          /* tetap tinggi fix */
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start; /* biar isi tidak “loncat” */
-  gap:10px;              /* jarak antar elemen stabil */
-}
+      <div class="question" id="questionText"></div>
 
+      <div id="optionsBox"></div>
 
-.kotoba{
-  font-size:70px;
-  margin-top: 15px;
-  color:#000;
-  margin-bottom:10px;
-  font-weight:bold;
-}
+    </div>
+    
+    <div id="kotobaListBox" class="hidden">
+      <div class="search-box" style="margin-bottom: 20px;">
+    <input type="text" id="searchInput" placeholder="Cari kata atau arti..." onkeyup="filterKotoba()" 
+           style="width: 100%; padding: 12px; border-radius: 15px; border: none;">
+  </div>
+  <div id="listContainer" style="max-height: 500px; overflow-y: auto; display: grid; gap: 10px;">
+    </div>
+ 
+    <!-- HASIL -->
+    <div id="resultBox" class="card hidden">
 
-ruby rt{
-  font-size:25px;
-  margin-bottom: 5px;
-  color:#4d4d4d;
-}
+      <h2>Hasil Sesi</h2>
 
-/* =========================
-   ARTI + PENJELASAN (FIX STABIL)
-========================= */
+      <p>Nilai: <span id="nilaiText"></span></p>
+      <p>Benar: <span id="benarText"></span></p>
+      <p>Salah: <span id="salahText"></span></p>
 
-.arti {
-  font-size: 38px;
-  color: #555;
-  font-weight: bold;
-  line-height: 1.2;
-  /* Memberikan ruang tetap agar penjelasan tidak naik saat arti pendek */
-  min-height: 50px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0px; /* Jarak kecil ke penjelasan */
-}
+      <button onclick="nextSession()">Lanjut</button>
 
-.penjelasan {
-  font-size: 22px;
-  color: #696969; /* Warna sedikit lebih muda agar kontras dengan arti */
-  min-height: 100px; 
-  margin-top: 0; /* Menempel tepat di bawah arti */
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 20px;
-}
+    </div>
 
-/* =========================
-   BUTTON FLASH / NEXT
-========================= */
+  </div>
 
-.flash-buttons{
-  margin-top:50px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
+  <script src="web.js"></script>
 
-.flash-buttons button{
-  background:linear-gradient(135deg,#ffb3cc,#ff7aa8);
-  border:none;
-  padding:14px 22px;
-  color:white;
-  border-radius:18px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.2s;
-  box-shadow:0 5px 15px rgba(255,122,168,0.3);
-}
-
-.flash-buttons button:hover{
-  transform:translateY(-2px);
-}
-
-/* tombol utama */
-#flashBtn{
-  position:absolute;
-  bottom:80px;
-  left:50%;
-  transform:translateX(-50%);
-  width:200px;
-  ;
-
-  background:linear-gradient(135deg,#ffb3cc,#ff7aa8);
-  border:none;
-  padding:14px 22px;
-  color:white;
-  border-radius:18px;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.2s;
-  box-shadow:0 5px 15px rgba(255,122,168,0.3);
-}
-
-#flashBtn:hover{
-  transform:translateX(-50%) translateY(-2px);
-}
-
-#kotobaListBox {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 25px;
-  animation: fadeIn 0.3s ease;
-}
-
-.kotoba-item {
-  background: white;
-  padding: 15px;
-  border-radius: 15px;
-  border-left: 5px solid #007db8;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.kotoba-item ruby rt {
-    font-size: 15px; /* Anda bisa ubah ke 12px jika ingin lebih kecil lagi */
-    margin-bottom: 0px;
-    color: #888;
-}
-
-.kotoba-item ruby {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.kotoba-item .item-arti {
-  font-size: 18px;
-  color: #007db8;
-  font-weight: bold;
-}
-
-.kotoba-item .item-desc {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.4;
-}
-/* Tambahkan ini di paling bawah file style.css */
-
-#listContainer {
-    max-height: 500px; /* Membatasi tinggi kotak agar tidak tembus ke bawah */
-    overflow-y: auto;  /* Memunculkan scrollbar jika kata sudah banyak */
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Mempercantik tampilan scrollbar (opsional) */
-#listContainer::-webkit-scrollbar {
-    width: 8px;
-}
-
-#listContainer::-webkit-scrollbar-thumb {
-    background: #ff9ec2;
-    border-radius: 10px;
-}
-
-.search-box input:focus {
-    outline: 2px solid #007db8;
-    background: #fff;
-}
-
-/* =========================
-   INFO
-========================= */
-
-.info{
-  margin-bottom:20px;
-  font-size:18px;
-  color:#666;
-}
-
-/* =========================
-   SOAL
-========================= */
-
-.question{
-  font-size:75px;
-  color:#000;
-  margin-bottom:15px;
-  font-weight:bold;
-}
-
-/* =========================
-   PILIHAN
-========================= */
-
-.option{
-  width:80%;
-  margin:5px 0;
-  padding:12px;
-  border:none;
-  border-radius:20px;
-  background:#d4d4d4;
-  font-size:25px;
-  cursor:pointer;
-  transition:0.2s;
-  color:#000;
-  font-weight:500;
-}
-
-.option:hover{
-  transform:scale(1.02);
-  background:#ffd0df;
-}
-
-.correct{
-  background:#6fdc92 !important;
-  color:white;
-}
-
-.wrong{
-  background:#ff6b6b !important;
-  color:white;
-}
-
-/* =========================
-   RESULT
-========================= */
-
-#resultBox h2{
-  color:#ff4f87;
-  margin-bottom:20px;
-  font-size:32px;
-}
-
-#resultBox p{
-  margin:12px 0;
-  font-size:22px;
-  color:#555;
-}
-
-#resultBox button{
-  margin-top:25px;
-  background:linear-gradient(135deg,#ff9ec2,#ff6fa5);
-  border:none;
-  color:white;
-  padding:14px 24px;
-  border-radius:18px;
-  font-size:18px;
-  cursor:pointer;
-  box-shadow:0 5px 15px rgba(255,111,165,0.4);
-}
-
-/* =========================
-   UTIL
-========================= */
-
-.hidden{
-  display:none;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:600px){
-
-  h1{
-    font-size:24px;
-  }
-
-  .kotoba{
-    font-size:42px;
-  }
-
-  .question{
-    font-size:28px;
-  }
-
-  .arti{
-    font-size:22px;
-  }
-
-  .option{
-    font-size:16px;
-    padding:15px;
-  }
-
-}
+</body>
+</html>
