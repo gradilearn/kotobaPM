@@ -337,6 +337,8 @@ function showHafalan(){
   document.getElementById("latihanBox").classList.add("hidden");
 
   document.getElementById("resultBox").classList.add("hidden");
+  
+  document.getElementById('latihanBox').classList.remove('hidden');
 }
 
 
