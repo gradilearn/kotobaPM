@@ -337,8 +337,6 @@ function showHafalan(){
   document.getElementById("latihanBox").classList.add("hidden");
 
   document.getElementById("resultBox").classList.add("hidden");
-  
-  document.getElementById('latihanBox').classList.remove('hidden');
 }
 
 
@@ -389,6 +387,8 @@ function startLatihan(){
 
   document.getElementById("resultBox").classList.add("hidden");
 
+  document.getElementById('latihanBox').classList.remove('hidden');
+  
   currentQuestion = 0;
 
   benar = 0;
@@ -585,3 +585,12 @@ function showHafalan() {
     document.getElementById('resultBox').classList.add('hidden');
     // ... sisa kode fungsi hafalan Anda ...
 }
+function toggleMenu(){
+
+    document
+    .getElementById("dropdownMenu")
+    .classList
+    .toggle("active");
+
+}
+
